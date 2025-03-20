@@ -24,7 +24,7 @@ class PartTimeEmployee extends Employee{
         System.out.println("Salary of part time employee : "+this.salary);
     }
 }
-class Main {
+class Main_lab7_Q3 {
     public static void main(String[] args) {
         Employee e1 = new PartTimeEmployee();
         Employee e2 = new FullTimeEmployee();

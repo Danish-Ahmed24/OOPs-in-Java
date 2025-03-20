@@ -1,11 +1,11 @@
 package Q6;
 
-public class Car {
+class Car_lab7_Q6 {
     private String brandName;
     private String model;
     private int chassisNumber;
     private Engine engine;
-    public Car(String brandName, String model, int chassisNumber,String fuelType,float hp,float capacity) {
+    public Car_lab7_Q6(String brandName, String model, int chassisNumber,String fuelType,float hp,float capacity) {
         this.brandName = brandName;
         this.model = model;
         this.chassisNumber = chassisNumber;

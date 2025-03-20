@@ -3,15 +3,15 @@ package Q6;
 import java.util.ArrayList;
 
 public class Management {
-    static ArrayList<Car> cars = new ArrayList<>();
-    static void addCar(Car car) {
-        cars.add(car);
+    static ArrayList<Q6.Car_lab7_Q6> carLab7Q6s = new ArrayList<>();
+    static void addCar(Q6.Car_lab7_Q6 carLab7Q6) {
+        carLab7Q6s.add(carLab7Q6);
     }
     static void showALlDetails()
     {
-        for(Car car : cars)
+        for(Q6.Car_lab7_Q6 carLab7Q6 : carLab7Q6s)
         {
-            car.showDetails();
+            carLab7Q6.showDetails();
             System.out.println("-------------------------------");
         }
     }

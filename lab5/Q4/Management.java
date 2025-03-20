@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Management {
     static private ArrayList<Student>  students = new ArrayList<>();
-    static private ArrayList<Course> courses = new ArrayList<>();
+    static private ArrayList<Course_lab5_Q4> cours = new ArrayList<>();
     static private ArrayList<Instructor>  instructors = new ArrayList<>();
     static public void addStudent(Student i)
     {
         students.add(i);
     }
-    static public void addCourse(Course i)
+    static public void addCourse(Course_lab5_Q4 i)
     {
-        courses.add(i);
+        cours.add(i);
     }
     static public void addInstructor(Instructor i)
     {
@@ -26,7 +26,7 @@ public class Management {
             i.showDetails();
         }
         System.out.println("\nCourse Details");
-        for(Course i : courses)
+        for(Course_lab5_Q4 i : cours)
         {
             System.out.println("\nCourse Name: " + i.getCourseName());
         }

@@ -15,7 +15,7 @@ class StandardDeliver extends Delivery_Q4 {
         System.out.println("Cost Standard Delivery");
     }
 }
-class Main{
+class Main_lab7_Q4 {
     public static void main(String[] args) {
         Delivery_Q4 express = new ExpressDelivery();
         Delivery_Q4 standard = new StandardDeliver();

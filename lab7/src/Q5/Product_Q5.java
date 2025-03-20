@@ -24,7 +24,7 @@ class Clothing extends Product_Q5 {
         System.out.println("Applying discount");
     }
 }
-class Main{
+class Main_lab7_Q5 {
     public static void main(String[] args) {
         System.out.println("UP Cast");
         Product_Q5 electronic = new Electronics();
