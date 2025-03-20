@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 public class Q1 {
     public static void main(String[] args) {
-
+        Car c1 = new Car("Honda","Civic",3232,652,"Petrol",544);
+        Car c2 = new Car("Toyota","4x4",676,93,"Diesel",200);
+        Car c3 = new Car("Suzuki","Cultus",403,1001,"Petrol",133);
+        c1.displayDetails();
     }
 }
 class Car{
@@ -25,7 +28,12 @@ class Car{
     }
     public void displayDetails()
     {
-        System.out.println();
+        System.out.println("-----------------------------");
+        System.out.println("Brand Name: "+this.brandName);
+        System.out.println("Model: "+this.model);
+        System.out.println("Chassis Number: "+this.chassisNumber);
+        System.out.println("Engine: "+this.engine);
+        this.engine.displayDetails();
     }
 }
 
@@ -39,5 +47,12 @@ class Engine{
         this.fuelType=ft;
         this.horsePower=hp;
         System.out.println("Engine Created success!");
+    }
+    public void displayDetails()
+    {
+        System.out.println("-----Engine-------");
+        System.out.println("Horse Power: "+this.horsePower);
+        System.out.println("Fuel Type: "+this.fuelType);
+        System.out.println("Capacity: "+this.capacity);
     }
 }

@@ -13,4 +13,4 @@ public class Main {
         system.processPayment(student1, 100);
         system.recordAttendance(student1);
     }
-}ff
+}
