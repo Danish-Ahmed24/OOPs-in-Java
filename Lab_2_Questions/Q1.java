@@ -11,6 +11,6 @@ public class Q1 {
                 max = numbers[i];
             }
         }
-        System.out.println("The maximum value in the array is: "+max);
+        System.out.println("The maximum value in the array is : "+max);
     }
 }
