@@ -7,7 +7,10 @@ public class Q1_lab6 {
         Car c1 = new Car("Honda","Civic",3232,652,"Petrol",544);
         Car c2 = new Car("Toyota","4x4",676,93,"Diesel",200);
         Car c3 = new Car("Suzuki","Cultus",403,1001,"Petrol",133);
-        c1.displayDetails();
+        for(Car c : Car.getCars())
+        {
+            c.displayDetails();
+        }
     }
 }
 class Car{
@@ -26,6 +29,11 @@ class Car{
         System.out.println("Car created success!");
         cars.add(this);
     }
+
+    public static ArrayList<Car> getCars() {
+        return cars;
+    }
+
     public void displayDetails()
     {
         System.out.println("-----------------------------");
