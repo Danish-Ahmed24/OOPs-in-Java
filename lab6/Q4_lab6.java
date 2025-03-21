@@ -12,7 +12,15 @@ import java.util.Scanner;
 //the use of a two-dimensional array for managing attendance records and performing calculations across multiple
 //dimensions of data.
 public class Q4_lab6 {
-
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter M : ");
+        int M = in.nextInt();
+        System.out.println("Enter W : ");
+        int W = in.nextInt();
+        Attendance attendance = new Attendance(M,W);
+        attendance.markAttendance();
+    }
 }
 class Attendance {
     Scanner in = new Scanner(System.in);
@@ -21,6 +29,8 @@ class Attendance {
     int [][]attendance;
     Attendance(int M,int W)
     {
+        this.M=M;
+        this.W=W;
         attendance = new int[M][W];
     }
     public void markAttendance()
@@ -33,7 +43,6 @@ class Attendance {
                 check = true;
                 while(check)
                 {
-
                 System.out.println("Mark attendance[1/0] ["+i+"]["+j+"] : ");
                 temp=in.nextInt();
                 if(temp==1 || temp ==0) {
