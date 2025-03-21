@@ -6,8 +6,8 @@ import java.util.Scanner;
 //attendance records for students over several weeks. The system should store attendance data where each row
 //represents a student and each column represents a week. For example, if there are M students and W weeks, the
 //array will be of size M x W. The system should allow the user to input the attendance for each student in each week
-//        (with 1 for present and 0 for absent). After storing the data,$$$$ the system should calculate and display the total
-//attendance for each student, the weekly attendance across all students, and the average class attendance.
+//(with 1 for present and 0 for absent). After storing the data,$$$$ the system should calculate and display
+//the total attendance for each student, the weekly attendance across all students, and the average class attendance.
 //Additionally, the system should identify students with the best and worst attendance records. This task illustrates
 //the use of a two-dimensional array for managing attendance records and performing calculations across multiple
 //dimensions of data.
@@ -54,5 +54,9 @@ class Attendance {
                 }
             }
         }
+    }
+    public int calcTotalAttEachStd()
+    {
+        int tot =
     }
 }
