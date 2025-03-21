@@ -26,7 +26,8 @@ class Attendance {
     public void markAttendance()
     {
         for(int i =0 ; i<M ;i++)
-        {   check = true;
+        {
+            check = true;
             for(int j =0; j<W ;j++)
             {
                 check = true;
