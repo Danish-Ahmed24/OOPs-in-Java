@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Q4_lab6 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter M (Number of Students): ");
+        System.out.println("Enter M: ");
         int M = in.nextInt();
-        System.out.println("Enter W (Number of Weeks): ");
+        System.out.println("Enter W: ");
         int W = in.nextInt();
         Attendance attendance = new Attendance(M, W);
         attendance.markAttendance();
@@ -37,7 +37,7 @@ class Attendance {
                         attendance[i][j] = temp;
                         validInput = true;
                     } else {
-                        System.out.println("ERROR: Please enter 1 (Present) or 0 (Absent). Try again.");
+                        System.out.println("ERROR enter 1 or 0");
                     }
                 }
             }
@@ -71,7 +71,7 @@ class Attendance {
     }
 
     public void displayAttendanceSummary() {
-        System.out.println("\n--- Attendance Summary ---");
+        System.out.println("\n---Attendance---");
 
         // Total attendance for each student
         int bestStudent = 0, worstStudent = 0;
@@ -97,7 +97,7 @@ class Attendance {
         }
 
         // Average attendance
-        System.out.printf("Average class attendance: %.2f%%\n", calcAverageAttendance());
+        System.out.println("Average class attendance: " + calcAverageAttendance());
 
         // Best and Worst attendance
         System.out.println("Student with Best Attendance: Student " + (bestStudent + 1) + " (" + maxAttendance + "/" + W + ")");
