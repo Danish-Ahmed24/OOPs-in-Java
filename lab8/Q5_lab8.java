@@ -25,33 +25,33 @@ class Event{
 class SpeedProgramming extends Event{
     @Override
     void schedule() {
-        System.out.println("Speed Programming Competition Schedule");
+        System.out.println("Speed Programming Competition Schedule: 10 am to 12 pm");
     }
 }
 
 class WebDev extends Event{
     @Override
     void schedule() {
-        System.out.println("Web Dev Competition Schedule");
+        System.out.println("Web Dev Competition Schedule: 10 am to 6 pm");
     }
 }
 
 class AIChallenge extends Event{
     @Override
     void schedule() {
-        System.out.println("AI Competition Schedule");
+        System.out.println("AI Competition Schedule: 8 am to 12 pm");
     }
 }
 class Cyber extends Event{
     @Override
     void schedule() {
-        System.out.println("Cyber Competition Schedule");
+        System.out.println("Cyber Competition Schedule: 11 am to 5 pm");
     }
 }
 class BusinessCase extends Event{
     @Override
     void schedule() {
-        System.out.println("Business Case Competition Schedule");
+        System.out.println("Business Case Competition Schedule: 8 am to 5 pm");
     }
 }
 
