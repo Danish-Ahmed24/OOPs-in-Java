@@ -14,6 +14,11 @@ class HauntedHouse{
     public ArrayList<Ghost> getGhosts() {
         return ghosts;
     }
+
+    public String getName() {
+        return name;
+    }
+
     public void addGhost(Ghost g)
     {
         this.ghosts.add(g);
@@ -99,11 +104,11 @@ class Visitor{
             {
                 if(visitors[i].getBravery()>hauntedHouse.getGhosts().get(j).getScareLevel())
                 {
-                    System.out.println(visitors[i].getName()+" laughing to "+hauntedHouse.getGhosts().get(i).getNameOfWorker());
+                    System.out.println(visitors[i].getName()+" laughing to "+hauntedHouse.getGhosts().get(j).getNameOfWorker());
                 }
                 else if(visitors[i].getBravery()<hauntedHouse.getGhosts().get(j).getScareLevel())
                 {
-                    System.out.println(visitors[i].getName()+" screaming running away from "+hauntedHouse.getGhosts().get(i).getNameOfWorker());
+                    System.out.println(visitors[i].getName()+" screaming running away from "+hauntedHouse.getGhosts().get(j).getNameOfWorker());
                 }
                 else {
                     System.out.println(visitors[i].getName()+"Shaky voice to "+hauntedHouse.getGhosts().get(i).getNameOfWorker());
@@ -123,15 +128,46 @@ class Visitor{
 public class A2_Q2_K243025 {
 
     public static void main(String[] args) {
-        Visitor[] visitors = {new Visitor("Danish",6),new Visitor("bisma",5),new Visitor("Rafay",10)};
+        Visitor[] visitors1 = {
+                new Visitor("Farhan",4),
+                new Visitor("Zeeshan",8),
+                new Visitor("Rafay",10)
+        };
+
+        Visitor[] visitors2 = {
+                new Visitor("bisma",5),
+                new Visitor("Zeeshan",8),
+                new Visitor("Rafay",10)
+        };
+
+        Visitor[] visitors3 = {
+                new Visitor("Farhan",4),
+                new Visitor("Danish",6),
+                new Visitor("bisma",5),
+                        };
         HauntedHouse house1 = new HauntedHouse("BOLLYWOOD");
-        Ghost g11 = new ShadowGhosts("Adeel",1);
-        Ghost g12 = new Banshees("Bilal",7);
-        Ghost g13 = new Poltergeists("Adil",9);
-        house1.addGhost(g11);
-        house1.addGhost(g12);
-        house1.addGhost(g13);
-        Visitor v1 = new Visitor("Danish",5);
-        Visitor.visit(visitors,house1);
+        HauntedHouse house2 = new HauntedHouse("VINEWOOD");
+        HauntedHouse house3 = new HauntedHouse("HOLLYWOOD");
+
+        Ghost g1 = new ShadowGhosts("Vampire",2);
+        Ghost g2 = new Banshees("Darcula",7);
+        Ghost g3 = new Poltergeists("Granny",9);
+        Ghost g4 = new HybridGhost(g1,g2);
+
+        house1.addGhost(g1);house1.addGhost(g2);
+        house1.addGhost(g3);house1.addGhost(g4);
+
+        house2.addGhost(g1);house2.addGhost(g2);
+        house2.addGhost(g3);house2.addGhost(g4);
+
+        house3.addGhost(g1);house3.addGhost(g2);
+        house3.addGhost(g3);house3.addGhost(g4);
+
+        System.out.println("---"+house1.getName()+"---");
+        Visitor.visit(visitors1,house1);
+        System.out.println("---"+house2.getName()+"---");
+        Visitor.visit(visitors2,house2);
+        System.out.println("---"+house3.getName()+"---");
+        Visitor.visit(visitors3,house3);
     }
 }
