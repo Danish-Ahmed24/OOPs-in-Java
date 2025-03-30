@@ -106,7 +106,7 @@ class TA extends Student {
      @Override
      public void displayInfo() {
           super.displayInfo();
-          System.out.println("Students assigned to this TA: ");
+          System.out.println("Student assigned to this TA: ");
           for (Student student : students) {
                System.out.println(student.name);
           }
