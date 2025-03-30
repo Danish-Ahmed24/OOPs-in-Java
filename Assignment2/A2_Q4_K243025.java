@@ -23,7 +23,7 @@ class User {
           this.email = email;
           this.id = id;
           this.name = name;
-          this.permissions = permissions;
+          this.permissions = new ArrayList<>(permissions);
           this.hashed_password = HashGenerator.generateHash(pass);
      }
 
@@ -36,7 +36,6 @@ class User {
           System.out.println("Name: " + this.name);
           System.out.println("Email: " + this.email);
           System.out.println("Permissions: " + this.permissions);
-          System.out.println("Hash Code: " + this.hashed_password);
      }
 }
 
@@ -49,49 +48,45 @@ class Student extends User {
      }
 
      public void submitAssignment(int index) {
-          this.assignments.set(index, 1);
+          if (index >= 0 && index < assignments.size()) {
+               assignments.set(index, 1);
+          }
+     }
+
+     public void assignAssignment(int index) {
+          while (assignments.size() <= index) {
+               assignments.add(0);
+          }
      }
 
      @Override
      public void displayInfo() {
           super.displayInfo();
-          System.out.println("Assignments Status: " + this.assignments);
-     }
-
-     public void assignAssignment(int index) {
-          while (this.assignments.size() <= index) {
-               this.assignments.add(0);
-          }
+          System.out.println("Assignments Status: " + assignments);
      }
 }
 
 class TA extends Student {
      private ArrayList<Student> students;
-     private String[] projects;
+     private ArrayList<String> projects;
 
      public TA(int id, String name, ArrayList<String> permissions, String email, String pass) {
           super(id, name, permissions, email, pass);
           this.students = new ArrayList<>();
-          this.projects = new String[2];
+          this.projects = new ArrayList<>();
      }
 
      public void viewProjects() {
-          for (String project : projects) {
-               if (project != null) {
-                    System.out.println(project);
-               }
-          }
+          System.out.println("Projects: " + projects);
      }
 
      public void workOnNewProject(String project) {
-          for (int i = 0; i < projects.length; i++) {
-               if (projects[i] == null) {
-                    projects[i] = project;
-                    System.out.println("Assigned new project: " + project);
-                    return;
-               }
+          if (projects.size() < 2) {
+               projects.add(project);
+               System.out.println("Assigned new project: " + project);
+          } else {
+               System.out.println("Can't exceed limit of 2 projects");
           }
-          System.out.println("Can't exceed limit of 2 projects");
      }
 
      public void assignStudentToTA(Student student) {
@@ -106,7 +101,7 @@ class TA extends Student {
      @Override
      public void displayInfo() {
           super.displayInfo();
-          System.out.println("Student assigned to this TA: ");
+          System.out.println("Students assigned: ");
           for (Student student : students) {
                System.out.println(student.name);
           }
@@ -152,7 +147,6 @@ class Professor extends User {
 }
 
 public class A2_Q4_K243025 {
-
      public static void authenticateAndPerformAction(User user, String action) {
           if (action.equals("view lab")) {
                if (user.permissions.contains("view lab")) {
@@ -189,6 +183,7 @@ public class A2_Q4_K243025 {
           professor.assignProject("Research Project 1");
           professor.assignTA(ta);
 
+          student.assignAssignment(0);
           student.displayInfo();
           ta.displayInfo();
           professor.displayInfo();
