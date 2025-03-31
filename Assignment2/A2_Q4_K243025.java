@@ -62,7 +62,7 @@ class Student extends User {
      @Override
      public void displayInfo() {
           super.displayInfo();
-          System.out.println("Assignments Status: " + assignments);
+          System.out.println("Assignment Status: " + assignments);
      }
 }
 
