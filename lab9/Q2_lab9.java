@@ -68,11 +68,15 @@ public class Q2_lab9 {
         Person student = new Student("Danish","k243025@nu.edu.pk","+92 443232323","Computer",3025);
         Person faculty = new Faculty("Sir.Minhal Raza","mihal.raza@google.com","+932 448423222","CYS",001);
         Person staff = new Staff("CS","CS.staff@habib.khi","+99 424352352352","Staff",4);
-        student.toString();
-        faculty.toString();
-        staff.toString();
+        System.out.println(student.toString());
+        System.out.println(faculty.toString());
+        System.out.println(staff.toString());
 
-
-
+        Student std = (Student) student;
+        std.getGPA();
+        Faculty fac = (Faculty) faculty;
+        System.out.println("Faculty: "+fac.getRank());
+        Staff stf = (Staff) staff;
+        System.out.println("Staff: "+stf.getSalary());
     }
 }
