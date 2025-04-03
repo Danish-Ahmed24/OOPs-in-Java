@@ -65,6 +65,7 @@ class DVD extends Item{
         return "DVD "+ super.toString()+" Length: "+length+" Director: "+director;
     }
 }
+
 public class Q1_lab9 {
     public static void main(String[] args) {
         Item book = new Book("Mark X","Henry",1991,"Jhon Martin",123142323);
