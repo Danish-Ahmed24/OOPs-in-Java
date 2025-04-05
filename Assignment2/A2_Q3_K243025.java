@@ -64,7 +64,7 @@ class RamzanDrone extends Vehicle {
 
     @Override
     public void move() {
-        System.out.println(id + " RamzanDrone flying for high-speed delivery.");
+        System.out.println(id + " RamzanDrone flying for high-speed delivery");
     }
 }
 
