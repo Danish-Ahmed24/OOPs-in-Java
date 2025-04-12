@@ -1,14 +1,19 @@
 package mid2Prep;
+import java.util.Arrays;
+import java.util.List;
 
-class Parent{
-    protected int x;
-}
-class Child extends Parent{
-    void F()
-    {
-        System.out.println(this.x);
+class TestArrayList {
+
+    // Method that accepts a List as a parameter
+    public static void printList(List<String> list) {
+        // Loop through the List and print each element
+        for (String item : list) {
+            System.out.println(item);
+        }
     }
-}
 
-public class Encapsulation_inheritance {
+    public static void main(String[] args) {
+        // Directly pass a List using Arrays.asList() to the method
+        printList(Arrays.asList("Apple", "Banana", "Cherry"));
+    }
 }
