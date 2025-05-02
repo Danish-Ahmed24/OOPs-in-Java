@@ -20,6 +20,7 @@ public class Q1_lab11 {
             {
                 file.write(element);
             }
+            file.close();
         }
         catch (Exception e)
         {
