@@ -10,4 +10,22 @@ public class AirStrikeMission extends Mission{
     public AirStrikeMission(String missionId,String targetLocation,String missionType){
         super(missionType,targetLocation,missionType);
     }
+
+    @Override
+    public boolean executeMission() throws Exception
+    {
+        for(JetFighter jet : jets)
+        {
+            jet.launchAirStrike(target);
+        }
+        return true;
+    }
+
+    public Target getTarget() {
+        return target;
+    }
+
+    public ArrayList<JetFighter> getJetFighters() {
+        return jets;
+    }
 }
