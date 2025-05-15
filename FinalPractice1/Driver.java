@@ -8,6 +8,48 @@ public class Driver {
         ticket.addTrip(flight1);
         ticket.addTrip(busTrip);
         System.out.println(ticket.toString());
+        int sum =0;
+        for(Trip t : ticket.getTrips())
+        {
+            if(t!=null)
+            {
 
+            sum+=t.getBasicPrice();
+            }
+        }
+        System.out.println("Ticket Price: "+sum);
+        ticket.reduceCost();
+        sum =0;
+        for(Trip t : ticket.getTrips())
+        {
+            if(t != null)
+            {
+            sum+=t.getBasicPrice();
+
+            }
+        }
+        System.out.println(
+                "After Reducing Price: "+sum
+        );
+
+
+
+
+
+
+
+
+
+
+
+        int i =0;
+        for(Trip t : ticket.getTrips())
+        {
+            if(t instanceof BusTrip)
+            {
+                i++;
+            }
+        }
+        System.out.println("Number of Bus trips are : "+i);
     }
 }

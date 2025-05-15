@@ -46,4 +46,8 @@ public class Ticket {
         res += "It is a VIP reservation";
         return res;
     }
+
+    public Trip[] getTrips() {
+            return trips;
+    }
 }
