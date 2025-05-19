@@ -1,0 +1,66 @@
+
+File Handling Requirements:
+
+Class: FamilyFileHandler implements FileOperations
+
+Must support the following:
+
+
+1. saveToFile(String fileName, ArrayList<Family>)
+
+Save each family’s info in human-readable format (name, id, camp, needs)
+
+Format: CSV or custom format
+
+Save multiple families, not just one
+
+
+
+2. loadFromFile(String fileName)
+
+Load families from text or serialized file
+
+Create and return ArrayList<Family> after parsing
+
+
+
+3. generateNeedsReport(String fileName, ArrayList<Family>)
+
+Count total food, medicine, clothing needed
+
+Identify top 3 families with highest total need
+
+Save a readable report in .txt format
+
+
+
+4. saveHighPriorityFamilies(String fileName, ArrayList<Family>)
+
+Save only families with needs greater than 5 in any category
+
+Store separately in a .txt file
+
+
+
+5. deleteFamilyById(String fileName, int id)
+
+Load all families
+
+Remove family by ID
+
+Save updated list back
+
+
+
+6. appendNewFamily(String fileName, Family f)
+
+Add a new family to an existing text file without overwriting
+
+Use BufferedWriter with append=true
+
+
+
+7. getFamiliesByCamp(String fileName, String campLocation)
+
+Read file and return list of families at given camp
+
